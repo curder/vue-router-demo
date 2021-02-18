@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link :to="{ name: 'brazil' }">Brazil</router-link>
-      <router-link :to="{ name: 'hawaii' }">Hawaii</router-link>
-      <router-link :to="{ name: 'jamaica' }">Jamaica</router-link>
-      <router-link :to="{ name: 'panama' }">Panama</router-link>
-    </div>
+    <the-navigation></the-navigation>
     <router-view/>
   </div>
 </template>
+<script>
+import TheNavigation from "@/components/TheNavigation";
 
+export default {
+  components: {
+    TheNavigation
+  }
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -30,7 +32,7 @@
   padding: 0 10px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+#nav a.exact-active-class {
+  color: #ab26ab;
 }
 </style>
