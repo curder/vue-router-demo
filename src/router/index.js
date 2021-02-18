@@ -16,32 +16,36 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    component: () => import(/* webpackChunkName: "about" */ "../views/About")
   },
   {
     path: "/brazil",
     name: "brazil",
-    component: () =>
-      import(/* webpackChunkName: "brazil" */ "../views/Brazil.vue")
+    component: () => import(/* webpackChunkName: "brazil" */ "../views/Brazil")
   },
   {
     path: "/hawaii",
     name: "hawaii",
-    component: () =>
-      import(/* webpackChunkName: "hawaii" */ "../views/Hawaii.vue")
+    component: () => import(/* webpackChunkName: "hawaii" */ "../views/Hawaii")
   },
   {
     path: "/jamaica",
     name: "jamaica",
     component: () =>
-      import(/* webpackChunkName: "jamaica" */ "../views/Jamaica.vue")
+      import(/* webpackChunkName: "jamaica" */ "../views/Jamaica")
   },
   {
     path: "/panama",
     name: "panama",
+    component: () => import(/* webpackChunkName: "panama" */ "../views/Panama")
+  },
+  {
+    path: "/details/:id",
+    name: "DestinationDetails",
     component: () =>
-      import(/* webpackChunkName: "panama" */ "../views/Panama.vue")
+      import(
+        /* webpackChunkName: "destinationDetails" */ "../views/DestinationDetails"
+      )
   }
 ];
 
