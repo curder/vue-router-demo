@@ -11,7 +11,10 @@
         class="links"
       >
         <router-link
-          :to="{ name: 'DestinationDetails', params: { id: destination.id } }"
+          :to="{
+            name: 'DestinationDetails',
+            params: { slug: destination.slug }
+          }"
           v-text="destination.name"
         ></router-link>
       </li>
@@ -24,7 +27,6 @@ import store from "@/store";
 export default {
   data() {
     return {
-      destinationId: this.$route.params.id,
       destinations: store.destinations
     };
   }
@@ -37,7 +39,7 @@ export default {
   position: sticky;
   top: 0;
   background-color: white;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #eaeaea;
   z-index: 1;
 }
 
