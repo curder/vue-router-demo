@@ -3,7 +3,7 @@
     <p class="logo">Travel App</p>
     <ul class="nav-links">
       <li class="links">
-        <router-link to="/">Home</router-link>
+        <router-link :to="{ name: 'home' }">Home</router-link>
       </li>
       <li
         v-for="destination in destinations"
@@ -12,7 +12,7 @@
       >
         <router-link
           :to="{
-            name: 'DestinationDetails',
+            name: 'destinationDetails',
             params: { slug: destination.slug }
           }"
           v-text="destination.name"
@@ -49,7 +49,7 @@ export default {
   font-weight: bold;
 }
 
-#nav a.active-class {
+#nav a.exact-active-class {
   color: #ab26ab;
 }
 

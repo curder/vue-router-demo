@@ -7,18 +7,29 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     props: true,
     component: Home
   },
   {
-    path: "/details/:slug",
-    name: "DestinationDetails",
+    path: "/destination/:slug",
+    name: "destinationDetails",
     props: true,
     component: () =>
       import(
-        /* webpackChunkName: "destinationDetails" */ "../views/DestinationDetails"
-      )
+        /* webpackChunkName: "DestinationDetails" */ "../views/DestinationDetails"
+      ),
+    children: [
+      {
+        path: ":experienceSlug",
+        name: "experienceDetails",
+        props: true,
+        component: () =>
+          import(
+            /* webpackChunkName: "ExperienceDetails" */ "../views/ExperienceDetails"
+          )
+      }
+    ]
   }
 ];
 
