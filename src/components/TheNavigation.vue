@@ -18,6 +18,9 @@
           v-text="destination.name"
         ></router-link>
       </li>
+      <li class="links">
+        <router-link :to="{ name: 'user' }">Dashboard</router-link>
+      </li>
     </ul>
   </div>
 </template>
